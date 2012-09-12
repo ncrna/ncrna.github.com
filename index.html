@@ -1,86 +1,62 @@
----
-layout:           default
----
-<script type="text/javascript">
-    BYB.images = [
-        'http://ww1.sinaimg.cn/large/8b8af2c8gw1do3ek44ojej.jpg'
-        ,'http://ww1.sinaimg.cn/large/8b8af2c8gw1do3eq6pla4j.jpg'
-        ,'http://ww1.sinaimg.cn/large/a74e55b4jw1dv23n1n9zaj.jpg'
-        ,'http://ww3.sinaimg.cn/large/a74e55b4jw1dv23op0j6qj.jpg'
-    ];
-    BYB.img = new Image();
-    BYB.img.src = BYB.images[parseInt(Math.random()*10,10)%4];
-    BYB.img.id = 'bgImage'
-</script>
-<div id="mycard" class="clearfix">
-    <div class="name">
-        <a href="/" class="link-icon">BeiYuu</a>
-    </div>
-    <div class="blog">
-        <a href="/blog" class="link-icon"><span></span></a>
-        <a href="/blog" class="link-info hide"><span>Blog</span></a>
-    </div>
-    <div class="project">
-        <a href="/project" class="link-icon"><span></span></a>
-        <a href="/project" class="link-info hide"><span>Project</span></a>
-    </div>
-    <div class="wiki">
-        <a href="/wiki" class="link-icon"><span></span></a>
-        <a href="/wiki" class="link-info hide"><span>Wiki</span></a>
-    </div>
-    <div class="about">
-        <a href="/about" class="link-icon"><span></span></a>
-        <a href="/about" class="link-info hide"><span>About Me</span></a>
-    </div>
-    <div class="rss">
-        <a href="{{ site.feed }}" class="link-icon"><span></span></a>
-        <a href="{{ site.feed }}" class="link-info hide"><span>Rss</span></a>
-    </div>
-</div>
-<script type="text/javascript">
-    $(document).ready(function(){
-        var imgWidth,imgHeight,winWidth,winHeight;
-        var imgComplete = function(){
-            imgHeight = BYB.img.height;
-            imgWidth = BYB.img.width;
-            resizeWindow();
-            //$('#mycard').css({'opacity':0.8});
-            $('body').css('background','none');
-            $(BYB.img).animate({opacity:'toggle'},500);
-        }
+<!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on http://github.com/jonrohan -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-        var resizeWindow = function(){
-            var _width,_height;
-            winHeight = $(document).height();
-            winWidth = $(document).width();
-            _height = imgHeight*winWidth/imgWidth;
-            _width = imgWidth*winHeight/imgHeight;
-            if(_height < winHeight){
-                $('#bgImage').css({'height':winHeight,'width':_width,'left':-(_width-winWidth)*0.5});
-            }else{
-                $('#bgImage').css({'width':winWidth,'height':_height,'left':0});
-            }
-        }
+  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen"/>
+  <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
 
-        $(BYB.img).css({'position':'fixed','top':'0','z-index':'-2','display':'none'});
-        $('body').append(BYB.img);
-        if(BYB.img.complete){
-            imgComplete()
-        }else{
-            BYB.img.onload = imgComplete;
-        }
+  <title>ncrna.github.com</title>
+  <meta name="description" content="The root of the web">
 
-        $(window).on('resize',resizeWindow);
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 
-        $('#mycard div').on('mouseenter',function(){
-            if(!$(this).hasClass('name')){
-                $(this).addClass('link-hover');
-                $(this).children('.link-info').removeClass('hide').animate({height:'23px'},'fast');
-            }
-        });
-        $('#mycard div').on('mouseleave',function(){
-            $(this).removeClass('link-hover');
-            $(this).children('.link-info').stop().animate({height:'0'});
-        });
-    })
-</script>
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header>
+      <h1 class="title">ncrna.github.com</h1>
+    </header>
+    <div id="container">
+      <p class="tagline">The root of the web</p>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          <a href="https://github.com/ncrna" class="code">View ncrna.github.com on GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+        <article class="markdown-body">
+          <h1>一点点说明</h1>
+
+<p>这是我的博客<a href="http://ncrna.net">ncRNA</a>的博客源码，欢迎您的光临！</p>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="owner">
+
+      <p><a href="https://github.com/ncrna" class="avatar"><img src="https://secure.gravatar.com/avatar/7757cdda0e45612c95a109432b7fceb7?s=30&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="48" height="48"/></a>View <a href="https://github.com/ncrna">ncrna</a> on <a href="https://www.github.com">GitHub</a></p>
+
+      </div>
+      <div class="creds">
+        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br/>theme by <a href="http://twitter.com/jonrohan/">Jon Rohan</a></small>
+      </div>
+    </footer>
+  </div>
+  <div class="current-section">
+    <a href="#top">Scroll to top</a>
+    <a href="https://github.com/ncrna/ncrna.github.com/tarball/master" class="tar">tar</a><a href="https://github.com/ncrna/ncrna.github.com/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
+    <p class="name"></p>
+  </div>
+
+  
+</body>
+</html>
